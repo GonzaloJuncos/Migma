@@ -1,6 +1,9 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../styles/projects.css";
+import rubi from '../image/rubi.png'
+
+
 
 const projects = [
   {
@@ -8,7 +11,8 @@ const projects = [
     tags: ["Python", "AI"],
     title: "Nombre de Proyecto",
     description: "Descripción del proyecto",
-    image: "",
+    image: rubi,
+    link: "https://rubi-joyeria.vercel.app/",
   },
   {
     id: "002",
@@ -88,11 +92,22 @@ export default function Projects() {
                       <h3>{project.title}</h3>
                       <p>{project.description}</p>
                     </div>
-
-                    <button className="project-card__link">
-                      VER DETALLES
-                      <span className="arrow">→</span>
-                    </button>
+                    {project.link ? (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-card__link"
+                      >
+                        VISTA PREVIA
+                        <span className="arrow">→</span>
+                      </a>
+                    ) : (
+                      <button className="project-card__link">
+                        VISTA PREVIA 
+                        <span className="arrow">→</span>
+                      </button>
+                    )}
                   </article>
                 </div>
               ))}
