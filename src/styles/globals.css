@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap');
+
+:root {
+  --color-bg: #161616;
+  --color-bg-green: #013F32;
+  --color-lime: #E7FE25;
+  --color-white: #FDFDFD;
+  --color-violet: #7249BC;
+  --color-muted: rgba(253, 253, 253, 0.72);
+  --color-border: rgba(253, 253, 253, 0.10);
+
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+  --font-tech: 'JetBrains Mono', monospace;
+  --font-alt: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  padding-top: 96px;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.section-label {
+  font-family: var(--font-tech);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-lime);
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--color-white);
+}
+
+.section-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-muted);
+}

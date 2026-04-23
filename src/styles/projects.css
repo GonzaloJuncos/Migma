@@ -1,0 +1,237 @@
+.projects-page {
+  background: #0a0a0a;
+  color: #f5f5f5;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+
+/* HERO */
+.projects-hero {
+  padding-top: 170px;
+  padding-bottom: 90px;
+  text-align: center;
+}
+
+.projects-hero__content {
+  max-width: 760px;
+  margin: 0 auto;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.projects-hero__content h1 {
+  font-size: 4.2rem;
+  line-height: 1;
+  font-weight: 500;
+  color: #d7f21e;
+  margin-bottom: 12px;
+  letter-spacing: -1px;
+}
+
+.projects-hero__content p {
+  max-width: 650px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  line-height: 1.2;
+  color: #bdbdbd;
+}
+
+.projects-hero__arrow {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 0.8;
+  color: #d7f21e;
+  font-size: 2rem;
+  animation: bounceArrow 1.8s infinite;
+}
+
+/* GRID */
+.projects-grid-section {
+  padding-bottom: 120px;
+}
+
+.project-card {
+  background: linear-gradient(180deg, #232323 0%, #1f1f1f 100%);
+  padding: 28px 28px 24px;
+  min-height: 100%;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border 0.35s ease;
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(215, 242, 30, 0.08), transparent 35%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(215, 242, 30, 0.35);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.project-card__number {
+  font-size: 0.82rem;
+  color: #d7f21e;
+  letter-spacing: 1px;
+}
+
+.project-card__tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.project-tag {
+  border: 1px solid rgba(215, 242, 30, 0.7);
+  color: #aab81b;
+  padding: 4px 12px;
+  font-size: 0.72rem;
+  line-height: 1;
+  background: transparent;
+}
+
+.project-card__image {
+  width: 100%;
+  aspect-ratio: 1 / 0.88;
+  background: #d9d9d9;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.project-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-card__image img {
+  transform: scale(1.05);
+}
+
+.project-card__body h3 {
+  font-size: 1rem;
+  color: #ffffff;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.project-card__body p {
+  font-size: 0.95rem;
+  color: #b8b8b8;
+  margin-bottom: 28px;
+}
+
+.project-card__link {
+  border: none;
+  background: transparent;
+  color: #d7f21e;
+  font-size: 0.82rem;
+  letter-spacing: 1px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: color 0.3s ease;
+}
+
+.project-card__link .arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-card__link .arrow {
+  transform: translateX(6px);
+}
+
+/* ANIMACIONES */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceArrow {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 0.75;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .projects-hero {
+    padding-top: 145px;
+    padding-bottom: 70px;
+  }
+
+  .projects-hero__content h1 {
+    font-size: 3.2rem;
+  }
+
+  .projects-hero__content p {
+    font-size: 1.02rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-hero {
+    padding-top: 125px;
+    padding-bottom: 60px;
+  }
+
+  .projects-hero__content h1 {
+    font-size: 2.5rem;
+  }
+
+  .projects-hero__content p {
+    font-size: 0.98rem;
+    line-height: 1.3;
+  }
+
+  .project-card {
+    padding: 22px 22px 20px;
+  }
+}

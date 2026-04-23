@@ -1,0 +1,379 @@
+.contact-page {
+  background: #101010;
+  color: #f5f5f5;
+  font-family: "Inter", sans-serif;
+}
+
+/* FONDO EXACTO TIPO GRID */
+.contact-hero-section {
+  position: relative;
+  padding-top: 82px;
+  padding-bottom: 92px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(231, 254, 37, 0.18);
+  background-color: #101010;
+  background-image:
+    linear-gradient(rgba(208, 227, 25, 0.26) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(208, 227, 25, 0.26) 1px, transparent 1px);
+  background-size: 54px 54px;
+  background-position: top left;
+}
+
+.contact-container {
+  width: min(1280px, calc(100% - 120px));
+  margin: 0 auto;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 280px 760px;
+  justify-content: space-between;
+  align-items: start;
+  min-height: 760px;
+}
+
+/* LEFT */
+.contact-left {
+  padding-top: 54px;
+}
+
+.contact-kicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  color: #e7fe25;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.2px;
+}
+
+.contact-kicker-dot {
+  width: 7px;
+  height: 7px;
+  background: #e7fe25;
+  display: inline-block;
+}
+
+.contact-title {
+  margin: 0;
+  font-size: 4.8rem;
+  line-height: 0.9;
+  font-weight: 700;
+  letter-spacing: -2.2px;
+  color: #f6f6f6;
+}
+
+.contact-title span {
+  color: #e7fe25;
+}
+
+.contact-info {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.contact-info-block h3 {
+  margin: 0 0 8px;
+  color: #e7fe25;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
+.contact-info-block a,
+.contact-info-block p {
+  margin: 0;
+  color: #f2f2f2;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.contact-info-block a:hover {
+  color: #e7fe25;
+}
+
+.contact-channels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 26px;
+  max-width: 250px;
+}
+
+.contact-channels a {
+  position: relative;
+  padding-left: 14px;
+}
+
+.contact-channels a::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: #e7fe25;
+  position: absolute;
+  left: 0;
+  top: 8px;
+}
+
+/* RIGHT */
+.contact-right {
+  padding-top: 28px;
+}
+
+.contact-panel {
+  width: 100%;
+  background: #262626;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.contact-panel:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.38);
+}
+
+.contact-panel__topbar {
+  height: 34px;
+  background: #616161;
+  display: grid;
+  grid-template-columns: 90px 1fr 80px;
+  align-items: center;
+  padding: 0 18px;
+}
+
+.topbar-dots {
+  display: flex;
+  gap: 7px;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot.red {
+  background: #bb4242;
+}
+
+.dot.yellow {
+  background: #d2d944;
+}
+
+.dot.green {
+  background: #34917e;
+}
+
+.topbar-title {
+  text-align: center;
+  color: #2b2b2b;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.2px;
+}
+
+.topbar-version {
+  text-align: right;
+  color: #e7fe25;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+}
+
+.contact-form {
+  padding: 42px 46px 40px;
+}
+
+.form-group {
+  margin-bottom: 34px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 14px;
+  color: #e7fe25;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(231, 254, 37, 0.62);
+  color: #f5f5f5;
+  padding: 0 0 14px;
+  font-size: 1rem;
+  outline: none;
+  resize: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-bottom-color: #f0ff5a;
+  box-shadow: 0 1px 0 0 #f0ff5a;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #686868;
+}
+
+.contact-submit {
+  margin-top: 8px;
+  background: #e7fe25;
+  color: #111111;
+  border: none;
+  border-radius: 6px;
+  padding: 15px 32px;
+  font-weight: 700;
+  font-size: 0.98rem;
+  letter-spacing: 0.2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.contact-submit:hover {
+  transform: translateY(-2px);
+  background: #f1ff4c;
+  box-shadow: 0 12px 30px rgba(231, 254, 37, 0.22);
+}
+
+.contact-submit span {
+  font-size: 1.15rem;
+  transition: transform 0.25s ease;
+}
+
+.contact-submit:hover span {
+  transform: translateX(4px);
+}
+
+/* ANIMACIONES */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp 0.85s ease forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.14s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 1280px) {
+  .contact-container {
+    width: min(1280px, calc(100% - 80px));
+  }
+
+  .contact-layout {
+    grid-template-columns: 260px minmax(0, 720px);
+    gap: 60px;
+  }
+
+  .contact-title {
+    font-size: 4.2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .contact-container {
+    width: min(1280px, calc(100% - 48px));
+  }
+
+  .contact-hero-section {
+    background-size: 44px 44px;
+    padding-top: 96px;
+    padding-bottom: 80px;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    min-height: auto;
+  }
+
+  .contact-left,
+  .contact-right {
+    padding-top: 10px;
+  }
+
+  .contact-title {
+    font-size: 3.8rem;
+  }
+
+  .contact-panel {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-hero-section {
+    background-size: 34px 34px;
+    padding-bottom: 70px;
+  }
+
+  .contact-title {
+    font-size: 3rem;
+    line-height: 0.95;
+    letter-spacing: -1px;
+  }
+
+  .contact-form {
+    padding: 28px 22px 30px;
+  }
+
+  .form-group label {
+    font-size: 1rem;
+  }
+
+  .contact-panel__topbar {
+    grid-template-columns: 76px 1fr 58px;
+    padding: 0 12px;
+  }
+
+  .topbar-title,
+  .topbar-version {
+    font-size: 0.63rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .contact-container {
+    width: min(1280px, calc(100% - 30px));
+  }
+
+  .contact-hero-section {
+    background-size: 28px 28px;
+  }
+
+  .contact-title {
+    font-size: 2.45rem;
+  }
+
+  .contact-channels {
+    grid-template-columns: 1fr 1fr;
+    max-width: 100%;
+  }
+
+  .contact-submit {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,272 @@
+.solutions-section {
+  padding: 2rem 0 6rem;
+  background-color: var(--color-bg);
+}
+
+.solutions-title {
+  font-size: clamp(2.3rem, 4vw, 3.6rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 14px;
+  grid-template-areas:
+    "web web web web web web ux ux ux ai ai ai"
+    "custom custom custom custom custom custom ux ux ux ai ai ai"
+    "db db db db security security security security maintenance maintenance maintenance maintenance";
+}
+
+.solution-card {
+  position: relative;
+  overflow: hidden;
+  background: #232323;
+  border: 1px solid rgba(231, 254, 37, 0.08);
+  min-height: 220px;
+  transform-origin: center;
+  will-change: transform, opacity;
+  transition:
+    border-color 0.45s ease,
+    box-shadow 0.45s ease,
+    background 0.45s ease;
+}
+
+.solution-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(231, 254, 37, 0.06), transparent 35%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.45s ease;
+}
+
+.solution-card::after {
+  content: '';
+  position: absolute;
+  inset: auto -18% -38% auto;
+  width: 210px;
+  height: 210px;
+  background: radial-gradient(circle, rgba(1, 63, 50, 0.34) 0%, rgba(1, 63, 50, 0) 72%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.45s ease;
+}
+
+.solution-card:hover {
+  border-color: rgba(231, 254, 37, 0.22);
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.24);
+  background: #272727;
+}
+
+.solution-card:hover::before,
+.solution-card:hover::after {
+  opacity: 1;
+}
+
+.solution-card-inner {
+  height: 100%;
+  padding: 1.9rem 1.5rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-web {
+  grid-area: web;
+  min-height: 194px;
+}
+
+.card-ux {
+  grid-area: ux;
+  min-height: 402px;
+}
+
+.card-ai {
+  grid-area: ai;
+  min-height: 402px;
+}
+
+.card-custom {
+  grid-area: custom;
+  min-height: 194px;
+}
+
+.card-db {
+  grid-area: db;
+  min-height: 194px;
+}
+
+.card-security {
+  grid-area: security;
+  min-height: 194px;
+}
+
+.card-maintenance {
+  grid-area: maintenance;
+  min-height: 194px;
+}
+
+.solution-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  color: var(--color-lime);
+  margin-bottom: 1.35rem;
+  transform-origin: center;
+}
+
+.solution-svg {
+  width: 26px;
+  height: 26px;
+  display: block;
+}
+
+.solution-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+}
+
+.solution-title {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-tech);
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--color-white);
+  text-transform: uppercase;
+  line-height: 1.2;
+  transition: color 0.35s ease;
+}
+
+.solution-text {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  line-height: 1.35;
+  max-width: 95%;
+  transition: color 0.35s ease;
+}
+
+.solution-card:hover .solution-title {
+  color: var(--color-lime);
+}
+
+.solution-card:hover .solution-text {
+  color: rgba(253, 253, 253, 0.88);
+}
+
+.solution-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.solution-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  padding: 0.18rem 0.75rem;
+  border: 1px solid rgba(231, 254, 37, 0.45);
+  color: rgba(231, 254, 37, 0.9);
+  font-size: 0.72rem;
+  line-height: 1;
+  white-space: nowrap;
+  background: transparent;
+  transition:
+    transform 0.28s ease,
+    background 0.28s ease,
+    border-color 0.28s ease,
+    color 0.28s ease;
+}
+
+.solution-tag:hover {
+  background: rgba(231, 254, 37, 0.06);
+  border-color: rgba(231, 254, 37, 0.75);
+  color: var(--color-lime);
+}
+
+@media (max-width: 1199px) {
+  .solutions-grid {
+    grid-template-areas:
+      "web web web web web web ux ux ux ux ux ux"
+      "custom custom custom custom custom custom ai ai ai ai ai ai"
+      "db db db db security security security security maintenance maintenance maintenance maintenance";
+  }
+
+  .card-ux,
+  .card-ai {
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 991px) {
+  .solutions-section {
+    padding: 2rem 0 5rem;
+  }
+
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "web web"
+      "custom custom"
+      "ux ai"
+      "db security"
+      "maintenance maintenance";
+  }
+
+  .card-web,
+  .card-custom,
+  .card-maintenance {
+    min-height: 200px;
+  }
+
+  .card-ux,
+  .card-ai,
+  .card-db,
+  .card-security {
+    min-height: 240px;
+  }
+}
+
+@media (max-width: 767px) {
+  .solutions-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "web"
+      "custom"
+      "ux"
+      "ai"
+      "db"
+      "security"
+      "maintenance";
+  }
+
+  .solution-card-inner {
+    padding: 1.5rem 1.2rem 1.2rem;
+  }
+
+  .solution-text {
+    max-width: 100%;
+  }
+
+  .card-web,
+  .card-custom,
+  .card-ux,
+  .card-ai,
+  .card-db,
+  .card-security,
+  .card-maintenance {
+    min-height: 210px;
+  }
+
+  .solution-tag {
+    font-size: 0.68rem;
+  }
+}
