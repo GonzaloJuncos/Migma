@@ -2,6 +2,8 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import '../styles/portfolio.css';
+import rubi from '../image/rubi.png'
+
 
 function PortfolioSection() {
   return (
@@ -21,13 +23,18 @@ function PortfolioSection() {
 
         <Row className="g-4">
           <Col lg={6}>
+          
+          <a target="_blank" href="https://rubi-joyeria.vercel.app/" >
             <article className="portfolio-card">
-              <div className="portfolio-image-placeholder"></div>
+              <div className="portfolio-image-placeholder">
+                <img src={rubi} alt="Joyería Ruby" className="portfolio-image w-100 h-100 object-fit-cover" />
+              </div>
               <div className="portfolio-info">
                 <h3 className="portfolio-card-title">JOYERÍA RUBY</h3>
                 <p className="portfolio-card-text">Experiencia de Compra Premium</p>
               </div>
             </article>
+            </a>
           </Col>
 
           <Col lg={6}>
